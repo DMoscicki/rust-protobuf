@@ -20,6 +20,10 @@
 
 //! Generated file from `google/protobuf/compiler/plugin.proto`
 
+/// Generated files are compatible only with the same version
+/// of protobuf runtime.
+const _PROTOBUF_VERSION_CHECK: () = ::protobuf::VERSION_4_0_0_ALPHA_0;
+
 ///  The version number of protocol compiler.
 // @@protoc_insertion_point(message:google.protobuf.compiler.Version)
 #[derive(PartialEq,Clone,Default,Debug)]
@@ -37,12 +41,12 @@ pub struct Version {
     pub suffix: ::std::option::Option<::std::string::String>,
     // special fields
     // @@protoc_insertion_point(special_field:google.protobuf.compiler.Version.special_fields)
-    pub special_fields: crate::SpecialFields,
+    pub special_fields: ::protobuf::SpecialFields,
 }
 
 impl<'a> ::std::default::Default for &'a Version {
     fn default() -> &'a Version {
-        <Version as crate::Message>::default_instance()
+        <Version as ::protobuf::Message>::default_instance()
     }
 }
 
@@ -144,30 +148,30 @@ impl Version {
         self.suffix.take().unwrap_or_else(|| ::std::string::String::new())
     }
 
-    fn generated_message_descriptor_data() -> crate::reflect::GeneratedMessageDescriptorData {
+    fn generated_message_descriptor_data() -> ::protobuf::reflect::GeneratedMessageDescriptorData {
         let mut fields = ::std::vec::Vec::with_capacity(4);
         let mut oneofs = ::std::vec::Vec::with_capacity(0);
-        fields.push(crate::reflect::rt::v2::make_option_accessor::<_, _>(
+        fields.push(::protobuf::reflect::rt::v2::make_option_accessor::<_, _>(
             "major",
             |m: &Version| { &m.major },
             |m: &mut Version| { &mut m.major },
         ));
-        fields.push(crate::reflect::rt::v2::make_option_accessor::<_, _>(
+        fields.push(::protobuf::reflect::rt::v2::make_option_accessor::<_, _>(
             "minor",
             |m: &Version| { &m.minor },
             |m: &mut Version| { &mut m.minor },
         ));
-        fields.push(crate::reflect::rt::v2::make_option_accessor::<_, _>(
+        fields.push(::protobuf::reflect::rt::v2::make_option_accessor::<_, _>(
             "patch",
             |m: &Version| { &m.patch },
             |m: &mut Version| { &mut m.patch },
         ));
-        fields.push(crate::reflect::rt::v2::make_option_accessor::<_, _>(
+        fields.push(::protobuf::reflect::rt::v2::make_option_accessor::<_, _>(
             "suffix",
             |m: &Version| { &m.suffix },
             |m: &mut Version| { &mut m.suffix },
         ));
-        crate::reflect::GeneratedMessageDescriptorData::new_2::<Version>(
+        ::protobuf::reflect::GeneratedMessageDescriptorData::new_2::<Version>(
             "Version",
             fields,
             oneofs,
@@ -175,14 +179,14 @@ impl Version {
     }
 }
 
-impl crate::Message for Version {
+impl ::protobuf::Message for Version {
     const NAME: &'static str = "Version";
 
     fn is_initialized(&self) -> bool {
         true
     }
 
-    fn merge_from(&mut self, is: &mut crate::CodedInputStream<'_>) -> crate::Result<()> {
+    fn merge_from(&mut self, is: &mut ::protobuf::CodedInputStream<'_>) -> ::protobuf::Result<()> {
         while let Some(tag) = is.read_raw_tag_or_eof()? {
             match tag {
                 8 => {
@@ -198,7 +202,7 @@ impl crate::Message for Version {
                     self.suffix = ::std::option::Option::Some(is.read_string()?);
                 },
                 tag => {
-                    crate::rt::read_unknown_or_skip_group(tag, is, self.special_fields.mut_unknown_fields())?;
+                    ::protobuf::rt::read_unknown_or_skip_group(tag, is, self.special_fields.mut_unknown_fields())?;
                 },
             };
         }
@@ -210,23 +214,23 @@ impl crate::Message for Version {
     fn compute_size(&self) -> u64 {
         let mut my_size = 0;
         if let Some(v) = self.major {
-            my_size += crate::rt::int32_size(1, v);
+            my_size += ::protobuf::rt::int32_size(1, v);
         }
         if let Some(v) = self.minor {
-            my_size += crate::rt::int32_size(2, v);
+            my_size += ::protobuf::rt::int32_size(2, v);
         }
         if let Some(v) = self.patch {
-            my_size += crate::rt::int32_size(3, v);
+            my_size += ::protobuf::rt::int32_size(3, v);
         }
         if let Some(v) = self.suffix.as_ref() {
-            my_size += crate::rt::string_size(4, &v);
+            my_size += ::protobuf::rt::string_size(4, &v);
         }
-        my_size += crate::rt::unknown_fields_size(self.special_fields.unknown_fields());
+        my_size += ::protobuf::rt::unknown_fields_size(self.special_fields.unknown_fields());
         self.special_fields.cached_size().set(my_size as u32);
         my_size
     }
 
-    fn write_to_with_cached_sizes(&self, os: &mut crate::CodedOutputStream<'_>) -> crate::Result<()> {
+    fn write_to_with_cached_sizes(&self, os: &mut ::protobuf::CodedOutputStream<'_>) -> ::protobuf::Result<()> {
         if let Some(v) = self.major {
             os.write_int32(1, v)?;
         }
@@ -243,11 +247,11 @@ impl crate::Message for Version {
         ::std::result::Result::Ok(())
     }
 
-    fn special_fields(&self) -> &crate::SpecialFields {
+    fn special_fields(&self) -> &::protobuf::SpecialFields {
         &self.special_fields
     }
 
-    fn mut_special_fields(&mut self) -> &mut crate::SpecialFields {
+    fn mut_special_fields(&mut self) -> &mut ::protobuf::SpecialFields {
         &mut self.special_fields
     }
 
@@ -269,27 +273,27 @@ impl crate::Message for Version {
             minor: ::std::option::Option::None,
             patch: ::std::option::Option::None,
             suffix: ::std::option::Option::None,
-            special_fields: crate::SpecialFields::new(),
+            special_fields: ::protobuf::SpecialFields::new(),
         };
         &instance
     }
 }
 
-impl crate::MessageFull for Version {
-    fn descriptor() -> crate::reflect::MessageDescriptor {
-        static descriptor: crate::rt::Lazy<crate::reflect::MessageDescriptor> = crate::rt::Lazy::new();
+impl ::protobuf::MessageFull for Version {
+    fn descriptor() -> ::protobuf::reflect::MessageDescriptor {
+        static descriptor: ::protobuf::rt::Lazy<::protobuf::reflect::MessageDescriptor> = ::protobuf::rt::Lazy::new();
         descriptor.get(|| file_descriptor().message_by_package_relative_name("Version").unwrap()).clone()
     }
 }
 
 impl ::std::fmt::Display for Version {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
-        crate::text_format::fmt(self, f)
+        ::protobuf::text_format::fmt(self, f)
     }
 }
 
-impl crate::reflect::ProtobufValue for Version {
-    type RuntimeType = crate::reflect::rt::RuntimeTypeMessage<Self>;
+impl ::protobuf::reflect::ProtobufValue for Version {
+    type RuntimeType = ::protobuf::reflect::rt::RuntimeTypeMessage<Self>;
 }
 
 ///  An encoded CodeGeneratorRequest is written to the plugin's stdin.
@@ -320,18 +324,18 @@ pub struct CodeGeneratorRequest {
     ///  Type names of fields and extensions in the FileDescriptorProto are always
     ///  fully qualified.
     // @@protoc_insertion_point(field:google.protobuf.compiler.CodeGeneratorRequest.proto_file)
-    pub proto_file: ::std::vec::Vec<crate::descriptor::FileDescriptorProto>,
+    pub proto_file: ::std::vec::Vec<::protobuf::descriptor::FileDescriptorProto>,
     ///  The version number of protocol compiler.
     // @@protoc_insertion_point(field:google.protobuf.compiler.CodeGeneratorRequest.compiler_version)
-    pub compiler_version: crate::MessageField<Version>,
+    pub compiler_version: ::protobuf::MessageField<Version>,
     // special fields
     // @@protoc_insertion_point(special_field:google.protobuf.compiler.CodeGeneratorRequest.special_fields)
-    pub special_fields: crate::SpecialFields,
+    pub special_fields: ::protobuf::SpecialFields,
 }
 
 impl<'a> ::std::default::Default for &'a CodeGeneratorRequest {
     fn default() -> &'a CodeGeneratorRequest {
-        <CodeGeneratorRequest as crate::Message>::default_instance()
+        <CodeGeneratorRequest as ::protobuf::Message>::default_instance()
     }
 }
 
@@ -376,30 +380,30 @@ impl CodeGeneratorRequest {
         self.parameter.take().unwrap_or_else(|| ::std::string::String::new())
     }
 
-    fn generated_message_descriptor_data() -> crate::reflect::GeneratedMessageDescriptorData {
+    fn generated_message_descriptor_data() -> ::protobuf::reflect::GeneratedMessageDescriptorData {
         let mut fields = ::std::vec::Vec::with_capacity(4);
         let mut oneofs = ::std::vec::Vec::with_capacity(0);
-        fields.push(crate::reflect::rt::v2::make_vec_simpler_accessor::<_, _>(
+        fields.push(::protobuf::reflect::rt::v2::make_vec_simpler_accessor::<_, _>(
             "file_to_generate",
             |m: &CodeGeneratorRequest| { &m.file_to_generate },
             |m: &mut CodeGeneratorRequest| { &mut m.file_to_generate },
         ));
-        fields.push(crate::reflect::rt::v2::make_option_accessor::<_, _>(
+        fields.push(::protobuf::reflect::rt::v2::make_option_accessor::<_, _>(
             "parameter",
             |m: &CodeGeneratorRequest| { &m.parameter },
             |m: &mut CodeGeneratorRequest| { &mut m.parameter },
         ));
-        fields.push(crate::reflect::rt::v2::make_vec_simpler_accessor::<_, _>(
+        fields.push(::protobuf::reflect::rt::v2::make_vec_simpler_accessor::<_, _>(
             "proto_file",
             |m: &CodeGeneratorRequest| { &m.proto_file },
             |m: &mut CodeGeneratorRequest| { &mut m.proto_file },
         ));
-        fields.push(crate::reflect::rt::v2::make_message_field_accessor::<_, Version>(
+        fields.push(::protobuf::reflect::rt::v2::make_message_field_accessor::<_, Version>(
             "compiler_version",
             |m: &CodeGeneratorRequest| { &m.compiler_version },
             |m: &mut CodeGeneratorRequest| { &mut m.compiler_version },
         ));
-        crate::reflect::GeneratedMessageDescriptorData::new_2::<CodeGeneratorRequest>(
+        ::protobuf::reflect::GeneratedMessageDescriptorData::new_2::<CodeGeneratorRequest>(
             "CodeGeneratorRequest",
             fields,
             oneofs,
@@ -407,7 +411,7 @@ impl CodeGeneratorRequest {
     }
 }
 
-impl crate::Message for CodeGeneratorRequest {
+impl ::protobuf::Message for CodeGeneratorRequest {
     const NAME: &'static str = "CodeGeneratorRequest";
 
     fn is_initialized(&self) -> bool {
@@ -424,7 +428,7 @@ impl crate::Message for CodeGeneratorRequest {
         true
     }
 
-    fn merge_from(&mut self, is: &mut crate::CodedInputStream<'_>) -> crate::Result<()> {
+    fn merge_from(&mut self, is: &mut ::protobuf::CodedInputStream<'_>) -> ::protobuf::Result<()> {
         while let Some(tag) = is.read_raw_tag_or_eof()? {
             match tag {
                 10 => {
@@ -437,10 +441,10 @@ impl crate::Message for CodeGeneratorRequest {
                     self.proto_file.push(is.read_message()?);
                 },
                 26 => {
-                    crate::rt::read_singular_message_into_field(is, &mut self.compiler_version)?;
+                    ::protobuf::rt::read_singular_message_into_field(is, &mut self.compiler_version)?;
                 },
                 tag => {
-                    crate::rt::read_unknown_or_skip_group(tag, is, self.special_fields.mut_unknown_fields())?;
+                    ::protobuf::rt::read_unknown_or_skip_group(tag, is, self.special_fields.mut_unknown_fields())?;
                 },
             };
         }
@@ -452,25 +456,25 @@ impl crate::Message for CodeGeneratorRequest {
     fn compute_size(&self) -> u64 {
         let mut my_size = 0;
         for value in &self.file_to_generate {
-            my_size += crate::rt::string_size(1, &value);
+            my_size += ::protobuf::rt::string_size(1, &value);
         };
         if let Some(v) = self.parameter.as_ref() {
-            my_size += crate::rt::string_size(2, &v);
+            my_size += ::protobuf::rt::string_size(2, &v);
         }
         for value in &self.proto_file {
             let len = value.compute_size();
-            my_size += 1 + crate::rt::compute_raw_varint64_size(len) + len;
+            my_size += 1 + ::protobuf::rt::compute_raw_varint64_size(len) + len;
         };
         if let Some(v) = self.compiler_version.as_ref() {
             let len = v.compute_size();
-            my_size += 1 + crate::rt::compute_raw_varint64_size(len) + len;
+            my_size += 1 + ::protobuf::rt::compute_raw_varint64_size(len) + len;
         }
-        my_size += crate::rt::unknown_fields_size(self.special_fields.unknown_fields());
+        my_size += ::protobuf::rt::unknown_fields_size(self.special_fields.unknown_fields());
         self.special_fields.cached_size().set(my_size as u32);
         my_size
     }
 
-    fn write_to_with_cached_sizes(&self, os: &mut crate::CodedOutputStream<'_>) -> crate::Result<()> {
+    fn write_to_with_cached_sizes(&self, os: &mut ::protobuf::CodedOutputStream<'_>) -> ::protobuf::Result<()> {
         for v in &self.file_to_generate {
             os.write_string(1, &v)?;
         };
@@ -478,20 +482,20 @@ impl crate::Message for CodeGeneratorRequest {
             os.write_string(2, v)?;
         }
         for v in &self.proto_file {
-            crate::rt::write_message_field_with_cached_size(15, v, os)?;
+            ::protobuf::rt::write_message_field_with_cached_size(15, v, os)?;
         };
         if let Some(v) = self.compiler_version.as_ref() {
-            crate::rt::write_message_field_with_cached_size(3, v, os)?;
+            ::protobuf::rt::write_message_field_with_cached_size(3, v, os)?;
         }
         os.write_unknown_fields(self.special_fields.unknown_fields())?;
         ::std::result::Result::Ok(())
     }
 
-    fn special_fields(&self) -> &crate::SpecialFields {
+    fn special_fields(&self) -> &::protobuf::SpecialFields {
         &self.special_fields
     }
 
-    fn mut_special_fields(&mut self) -> &mut crate::SpecialFields {
+    fn mut_special_fields(&mut self) -> &mut ::protobuf::SpecialFields {
         &mut self.special_fields
     }
 
@@ -512,28 +516,28 @@ impl crate::Message for CodeGeneratorRequest {
             file_to_generate: ::std::vec::Vec::new(),
             parameter: ::std::option::Option::None,
             proto_file: ::std::vec::Vec::new(),
-            compiler_version: crate::MessageField::none(),
-            special_fields: crate::SpecialFields::new(),
+            compiler_version: ::protobuf::MessageField::none(),
+            special_fields: ::protobuf::SpecialFields::new(),
         };
         &instance
     }
 }
 
-impl crate::MessageFull for CodeGeneratorRequest {
-    fn descriptor() -> crate::reflect::MessageDescriptor {
-        static descriptor: crate::rt::Lazy<crate::reflect::MessageDescriptor> = crate::rt::Lazy::new();
+impl ::protobuf::MessageFull for CodeGeneratorRequest {
+    fn descriptor() -> ::protobuf::reflect::MessageDescriptor {
+        static descriptor: ::protobuf::rt::Lazy<::protobuf::reflect::MessageDescriptor> = ::protobuf::rt::Lazy::new();
         descriptor.get(|| file_descriptor().message_by_package_relative_name("CodeGeneratorRequest").unwrap()).clone()
     }
 }
 
 impl ::std::fmt::Display for CodeGeneratorRequest {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
-        crate::text_format::fmt(self, f)
+        ::protobuf::text_format::fmt(self, f)
     }
 }
 
-impl crate::reflect::ProtobufValue for CodeGeneratorRequest {
-    type RuntimeType = crate::reflect::rt::RuntimeTypeMessage<Self>;
+impl ::protobuf::reflect::ProtobufValue for CodeGeneratorRequest {
+    type RuntimeType = ::protobuf::reflect::rt::RuntimeTypeMessage<Self>;
 }
 
 ///  The plugin writes an encoded CodeGeneratorResponse to stdout.
@@ -559,12 +563,12 @@ pub struct CodeGeneratorResponse {
     pub file: ::std::vec::Vec<code_generator_response::File>,
     // special fields
     // @@protoc_insertion_point(special_field:google.protobuf.compiler.CodeGeneratorResponse.special_fields)
-    pub special_fields: crate::SpecialFields,
+    pub special_fields: ::protobuf::SpecialFields,
 }
 
 impl<'a> ::std::default::Default for &'a CodeGeneratorResponse {
     fn default() -> &'a CodeGeneratorResponse {
-        <CodeGeneratorResponse as crate::Message>::default_instance()
+        <CodeGeneratorResponse as ::protobuf::Message>::default_instance()
     }
 }
 
@@ -628,25 +632,25 @@ impl CodeGeneratorResponse {
         self.supported_features = ::std::option::Option::Some(v);
     }
 
-    fn generated_message_descriptor_data() -> crate::reflect::GeneratedMessageDescriptorData {
+    fn generated_message_descriptor_data() -> ::protobuf::reflect::GeneratedMessageDescriptorData {
         let mut fields = ::std::vec::Vec::with_capacity(3);
         let mut oneofs = ::std::vec::Vec::with_capacity(0);
-        fields.push(crate::reflect::rt::v2::make_option_accessor::<_, _>(
+        fields.push(::protobuf::reflect::rt::v2::make_option_accessor::<_, _>(
             "error",
             |m: &CodeGeneratorResponse| { &m.error },
             |m: &mut CodeGeneratorResponse| { &mut m.error },
         ));
-        fields.push(crate::reflect::rt::v2::make_option_accessor::<_, _>(
+        fields.push(::protobuf::reflect::rt::v2::make_option_accessor::<_, _>(
             "supported_features",
             |m: &CodeGeneratorResponse| { &m.supported_features },
             |m: &mut CodeGeneratorResponse| { &mut m.supported_features },
         ));
-        fields.push(crate::reflect::rt::v2::make_vec_simpler_accessor::<_, _>(
+        fields.push(::protobuf::reflect::rt::v2::make_vec_simpler_accessor::<_, _>(
             "file",
             |m: &CodeGeneratorResponse| { &m.file },
             |m: &mut CodeGeneratorResponse| { &mut m.file },
         ));
-        crate::reflect::GeneratedMessageDescriptorData::new_2::<CodeGeneratorResponse>(
+        ::protobuf::reflect::GeneratedMessageDescriptorData::new_2::<CodeGeneratorResponse>(
             "CodeGeneratorResponse",
             fields,
             oneofs,
@@ -654,14 +658,14 @@ impl CodeGeneratorResponse {
     }
 }
 
-impl crate::Message for CodeGeneratorResponse {
+impl ::protobuf::Message for CodeGeneratorResponse {
     const NAME: &'static str = "CodeGeneratorResponse";
 
     fn is_initialized(&self) -> bool {
         true
     }
 
-    fn merge_from(&mut self, is: &mut crate::CodedInputStream<'_>) -> crate::Result<()> {
+    fn merge_from(&mut self, is: &mut ::protobuf::CodedInputStream<'_>) -> ::protobuf::Result<()> {
         while let Some(tag) = is.read_raw_tag_or_eof()? {
             match tag {
                 10 => {
@@ -674,7 +678,7 @@ impl crate::Message for CodeGeneratorResponse {
                     self.file.push(is.read_message()?);
                 },
                 tag => {
-                    crate::rt::read_unknown_or_skip_group(tag, is, self.special_fields.mut_unknown_fields())?;
+                    ::protobuf::rt::read_unknown_or_skip_group(tag, is, self.special_fields.mut_unknown_fields())?;
                 },
             };
         }
@@ -686,21 +690,21 @@ impl crate::Message for CodeGeneratorResponse {
     fn compute_size(&self) -> u64 {
         let mut my_size = 0;
         if let Some(v) = self.error.as_ref() {
-            my_size += crate::rt::string_size(1, &v);
+            my_size += ::protobuf::rt::string_size(1, &v);
         }
         if let Some(v) = self.supported_features {
-            my_size += crate::rt::uint64_size(2, v);
+            my_size += ::protobuf::rt::uint64_size(2, v);
         }
         for value in &self.file {
             let len = value.compute_size();
-            my_size += 1 + crate::rt::compute_raw_varint64_size(len) + len;
+            my_size += 1 + ::protobuf::rt::compute_raw_varint64_size(len) + len;
         };
-        my_size += crate::rt::unknown_fields_size(self.special_fields.unknown_fields());
+        my_size += ::protobuf::rt::unknown_fields_size(self.special_fields.unknown_fields());
         self.special_fields.cached_size().set(my_size as u32);
         my_size
     }
 
-    fn write_to_with_cached_sizes(&self, os: &mut crate::CodedOutputStream<'_>) -> crate::Result<()> {
+    fn write_to_with_cached_sizes(&self, os: &mut ::protobuf::CodedOutputStream<'_>) -> ::protobuf::Result<()> {
         if let Some(v) = self.error.as_ref() {
             os.write_string(1, v)?;
         }
@@ -708,17 +712,17 @@ impl crate::Message for CodeGeneratorResponse {
             os.write_uint64(2, v)?;
         }
         for v in &self.file {
-            crate::rt::write_message_field_with_cached_size(15, v, os)?;
+            ::protobuf::rt::write_message_field_with_cached_size(15, v, os)?;
         };
         os.write_unknown_fields(self.special_fields.unknown_fields())?;
         ::std::result::Result::Ok(())
     }
 
-    fn special_fields(&self) -> &crate::SpecialFields {
+    fn special_fields(&self) -> &::protobuf::SpecialFields {
         &self.special_fields
     }
 
-    fn mut_special_fields(&mut self) -> &mut crate::SpecialFields {
+    fn mut_special_fields(&mut self) -> &mut ::protobuf::SpecialFields {
         &mut self.special_fields
     }
 
@@ -738,27 +742,27 @@ impl crate::Message for CodeGeneratorResponse {
             error: ::std::option::Option::None,
             supported_features: ::std::option::Option::None,
             file: ::std::vec::Vec::new(),
-            special_fields: crate::SpecialFields::new(),
+            special_fields: ::protobuf::SpecialFields::new(),
         };
         &instance
     }
 }
 
-impl crate::MessageFull for CodeGeneratorResponse {
-    fn descriptor() -> crate::reflect::MessageDescriptor {
-        static descriptor: crate::rt::Lazy<crate::reflect::MessageDescriptor> = crate::rt::Lazy::new();
+impl ::protobuf::MessageFull for CodeGeneratorResponse {
+    fn descriptor() -> ::protobuf::reflect::MessageDescriptor {
+        static descriptor: ::protobuf::rt::Lazy<::protobuf::reflect::MessageDescriptor> = ::protobuf::rt::Lazy::new();
         descriptor.get(|| file_descriptor().message_by_package_relative_name("CodeGeneratorResponse").unwrap()).clone()
     }
 }
 
 impl ::std::fmt::Display for CodeGeneratorResponse {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
-        crate::text_format::fmt(self, f)
+        ::protobuf::text_format::fmt(self, f)
     }
 }
 
-impl crate::reflect::ProtobufValue for CodeGeneratorResponse {
-    type RuntimeType = crate::reflect::rt::RuntimeTypeMessage<Self>;
+impl ::protobuf::reflect::ProtobufValue for CodeGeneratorResponse {
+    type RuntimeType = ::protobuf::reflect::rt::RuntimeTypeMessage<Self>;
 }
 
 /// Nested message and enums of message `CodeGeneratorResponse`
@@ -827,15 +831,15 @@ pub mod code_generator_response {
         ///  point is used, this information will be appropriately offset and inserted
         ///  into the code generation metadata for the generated files.
         // @@protoc_insertion_point(field:google.protobuf.compiler.CodeGeneratorResponse.File.generated_code_info)
-        pub generated_code_info: crate::MessageField<crate::descriptor::GeneratedCodeInfo>,
+        pub generated_code_info: ::protobuf::MessageField<::protobuf::descriptor::GeneratedCodeInfo>,
         // special fields
         // @@protoc_insertion_point(special_field:google.protobuf.compiler.CodeGeneratorResponse.File.special_fields)
-        pub special_fields: crate::SpecialFields,
+        pub special_fields: ::protobuf::SpecialFields,
     }
 
     impl<'a> ::std::default::Default for &'a File {
         fn default() -> &'a File {
-            <File as crate::Message>::default_instance()
+            <File as ::protobuf::Message>::default_instance()
         }
     }
 
@@ -952,30 +956,30 @@ pub mod code_generator_response {
             self.content.take().unwrap_or_else(|| ::std::string::String::new())
         }
 
-        pub(in super) fn generated_message_descriptor_data() -> crate::reflect::GeneratedMessageDescriptorData {
+        pub(in super) fn generated_message_descriptor_data() -> ::protobuf::reflect::GeneratedMessageDescriptorData {
             let mut fields = ::std::vec::Vec::with_capacity(4);
             let mut oneofs = ::std::vec::Vec::with_capacity(0);
-            fields.push(crate::reflect::rt::v2::make_option_accessor::<_, _>(
+            fields.push(::protobuf::reflect::rt::v2::make_option_accessor::<_, _>(
                 "name",
                 |m: &File| { &m.name },
                 |m: &mut File| { &mut m.name },
             ));
-            fields.push(crate::reflect::rt::v2::make_option_accessor::<_, _>(
+            fields.push(::protobuf::reflect::rt::v2::make_option_accessor::<_, _>(
                 "insertion_point",
                 |m: &File| { &m.insertion_point },
                 |m: &mut File| { &mut m.insertion_point },
             ));
-            fields.push(crate::reflect::rt::v2::make_option_accessor::<_, _>(
+            fields.push(::protobuf::reflect::rt::v2::make_option_accessor::<_, _>(
                 "content",
                 |m: &File| { &m.content },
                 |m: &mut File| { &mut m.content },
             ));
-            fields.push(crate::reflect::rt::v2::make_message_field_accessor::<_, crate::descriptor::GeneratedCodeInfo>(
+            fields.push(::protobuf::reflect::rt::v2::make_message_field_accessor::<_, ::protobuf::descriptor::GeneratedCodeInfo>(
                 "generated_code_info",
                 |m: &File| { &m.generated_code_info },
                 |m: &mut File| { &mut m.generated_code_info },
             ));
-            crate::reflect::GeneratedMessageDescriptorData::new_2::<File>(
+            ::protobuf::reflect::GeneratedMessageDescriptorData::new_2::<File>(
                 "CodeGeneratorResponse.File",
                 fields,
                 oneofs,
@@ -983,14 +987,14 @@ pub mod code_generator_response {
         }
     }
 
-    impl crate::Message for File {
+    impl ::protobuf::Message for File {
         const NAME: &'static str = "File";
 
         fn is_initialized(&self) -> bool {
             true
         }
 
-        fn merge_from(&mut self, is: &mut crate::CodedInputStream<'_>) -> crate::Result<()> {
+        fn merge_from(&mut self, is: &mut ::protobuf::CodedInputStream<'_>) -> ::protobuf::Result<()> {
             while let Some(tag) = is.read_raw_tag_or_eof()? {
                 match tag {
                     10 => {
@@ -1003,10 +1007,10 @@ pub mod code_generator_response {
                         self.content = ::std::option::Option::Some(is.read_string()?);
                     },
                     130 => {
-                        crate::rt::read_singular_message_into_field(is, &mut self.generated_code_info)?;
+                        ::protobuf::rt::read_singular_message_into_field(is, &mut self.generated_code_info)?;
                     },
                     tag => {
-                        crate::rt::read_unknown_or_skip_group(tag, is, self.special_fields.mut_unknown_fields())?;
+                        ::protobuf::rt::read_unknown_or_skip_group(tag, is, self.special_fields.mut_unknown_fields())?;
                     },
                 };
             }
@@ -1018,24 +1022,24 @@ pub mod code_generator_response {
         fn compute_size(&self) -> u64 {
             let mut my_size = 0;
             if let Some(v) = self.name.as_ref() {
-                my_size += crate::rt::string_size(1, &v);
+                my_size += ::protobuf::rt::string_size(1, &v);
             }
             if let Some(v) = self.insertion_point.as_ref() {
-                my_size += crate::rt::string_size(2, &v);
+                my_size += ::protobuf::rt::string_size(2, &v);
             }
             if let Some(v) = self.content.as_ref() {
-                my_size += crate::rt::string_size(15, &v);
+                my_size += ::protobuf::rt::string_size(15, &v);
             }
             if let Some(v) = self.generated_code_info.as_ref() {
                 let len = v.compute_size();
-                my_size += 2 + crate::rt::compute_raw_varint64_size(len) + len;
+                my_size += 2 + ::protobuf::rt::compute_raw_varint64_size(len) + len;
             }
-            my_size += crate::rt::unknown_fields_size(self.special_fields.unknown_fields());
+            my_size += ::protobuf::rt::unknown_fields_size(self.special_fields.unknown_fields());
             self.special_fields.cached_size().set(my_size as u32);
             my_size
         }
 
-        fn write_to_with_cached_sizes(&self, os: &mut crate::CodedOutputStream<'_>) -> crate::Result<()> {
+        fn write_to_with_cached_sizes(&self, os: &mut ::protobuf::CodedOutputStream<'_>) -> ::protobuf::Result<()> {
             if let Some(v) = self.name.as_ref() {
                 os.write_string(1, v)?;
             }
@@ -1046,17 +1050,17 @@ pub mod code_generator_response {
                 os.write_string(15, v)?;
             }
             if let Some(v) = self.generated_code_info.as_ref() {
-                crate::rt::write_message_field_with_cached_size(16, v, os)?;
+                ::protobuf::rt::write_message_field_with_cached_size(16, v, os)?;
             }
             os.write_unknown_fields(self.special_fields.unknown_fields())?;
             ::std::result::Result::Ok(())
         }
 
-        fn special_fields(&self) -> &crate::SpecialFields {
+        fn special_fields(&self) -> &::protobuf::SpecialFields {
             &self.special_fields
         }
 
-        fn mut_special_fields(&mut self) -> &mut crate::SpecialFields {
+        fn mut_special_fields(&mut self) -> &mut ::protobuf::SpecialFields {
             &mut self.special_fields
         }
 
@@ -1077,28 +1081,28 @@ pub mod code_generator_response {
                 name: ::std::option::Option::None,
                 insertion_point: ::std::option::Option::None,
                 content: ::std::option::Option::None,
-                generated_code_info: crate::MessageField::none(),
-                special_fields: crate::SpecialFields::new(),
+                generated_code_info: ::protobuf::MessageField::none(),
+                special_fields: ::protobuf::SpecialFields::new(),
             };
             &instance
         }
     }
 
-    impl crate::MessageFull for File {
-        fn descriptor() -> crate::reflect::MessageDescriptor {
-            static descriptor: crate::rt::Lazy<crate::reflect::MessageDescriptor> = crate::rt::Lazy::new();
+    impl ::protobuf::MessageFull for File {
+        fn descriptor() -> ::protobuf::reflect::MessageDescriptor {
+            static descriptor: ::protobuf::rt::Lazy<::protobuf::reflect::MessageDescriptor> = ::protobuf::rt::Lazy::new();
             descriptor.get(|| super::file_descriptor().message_by_package_relative_name("CodeGeneratorResponse.File").unwrap()).clone()
         }
     }
 
     impl ::std::fmt::Display for File {
         fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
-            crate::text_format::fmt(self, f)
+            ::protobuf::text_format::fmt(self, f)
         }
     }
 
-    impl crate::reflect::ProtobufValue for File {
-        type RuntimeType = crate::reflect::rt::RuntimeTypeMessage<Self>;
+    impl ::protobuf::reflect::ProtobufValue for File {
+        type RuntimeType = ::protobuf::reflect::rt::RuntimeTypeMessage<Self>;
     }
 
     ///  Sync with code_generator.h.
@@ -1111,7 +1115,7 @@ pub mod code_generator_response {
         FEATURE_PROTO3_OPTIONAL = 1,
     }
 
-    impl crate::Enum for Feature {
+    impl ::protobuf::Enum for Feature {
         const NAME: &'static str = "Feature";
 
         fn value(&self) -> i32 {
@@ -1140,13 +1144,13 @@ pub mod code_generator_response {
         ];
     }
 
-    impl crate::EnumFull for Feature {
-        fn enum_descriptor() -> crate::reflect::EnumDescriptor {
-            static descriptor: crate::rt::Lazy<crate::reflect::EnumDescriptor> = crate::rt::Lazy::new();
+    impl ::protobuf::EnumFull for Feature {
+        fn enum_descriptor() -> ::protobuf::reflect::EnumDescriptor {
+            static descriptor: ::protobuf::rt::Lazy<::protobuf::reflect::EnumDescriptor> = ::protobuf::rt::Lazy::new();
             descriptor.get(|| super::file_descriptor().enum_by_package_relative_name("CodeGeneratorResponse.Feature").unwrap()).clone()
         }
 
-        fn descriptor(&self) -> crate::reflect::EnumValueDescriptor {
+        fn descriptor(&self) -> ::protobuf::reflect::EnumValueDescriptor {
             let index = *self as usize;
             Self::enum_descriptor().value_by_index(index)
         }
@@ -1159,8 +1163,8 @@ pub mod code_generator_response {
     }
 
     impl Feature {
-        pub(in super) fn generated_enum_descriptor_data() -> crate::reflect::GeneratedEnumDescriptorData {
-            crate::reflect::GeneratedEnumDescriptorData::new::<Feature>("CodeGeneratorResponse.Feature")
+        pub(in super) fn generated_enum_descriptor_data() -> ::protobuf::reflect::GeneratedEnumDescriptorData {
+            ::protobuf::reflect::GeneratedEnumDescriptorData::new::<Feature>("CodeGeneratorResponse.Feature")
         }
     }
 }
@@ -1410,21 +1414,21 @@ static file_descriptor_proto_data: &'static [u8] = b"\
 ";
 
 /// `FileDescriptorProto` object which was a source for this generated file
-fn file_descriptor_proto() -> &'static crate::descriptor::FileDescriptorProto {
-    static file_descriptor_proto_lazy: crate::rt::Lazy<crate::descriptor::FileDescriptorProto> = crate::rt::Lazy::new();
+fn file_descriptor_proto() -> &'static ::protobuf::descriptor::FileDescriptorProto {
+    static file_descriptor_proto_lazy: ::protobuf::rt::Lazy<::protobuf::descriptor::FileDescriptorProto> = ::protobuf::rt::Lazy::new();
     file_descriptor_proto_lazy.get(|| {
-        crate::Message::parse_from_bytes(file_descriptor_proto_data).unwrap()
+        ::protobuf::Message::parse_from_bytes(file_descriptor_proto_data).unwrap()
     })
 }
 
 /// `FileDescriptor` object which allows dynamic access to files
-pub fn file_descriptor() -> &'static crate::reflect::FileDescriptor {
-    static generated_file_descriptor_lazy: crate::rt::Lazy<crate::reflect::GeneratedFileDescriptor> = crate::rt::Lazy::new();
-    static file_descriptor: crate::rt::Lazy<crate::reflect::FileDescriptor> = crate::rt::Lazy::new();
+pub fn file_descriptor() -> &'static ::protobuf::reflect::FileDescriptor {
+    static generated_file_descriptor_lazy: ::protobuf::rt::Lazy<::protobuf::reflect::GeneratedFileDescriptor> = ::protobuf::rt::Lazy::new();
+    static file_descriptor: ::protobuf::rt::Lazy<::protobuf::reflect::FileDescriptor> = ::protobuf::rt::Lazy::new();
     file_descriptor.get(|| {
         let generated_file_descriptor = generated_file_descriptor_lazy.get(|| {
             let mut deps = ::std::vec::Vec::with_capacity(1);
-            deps.push(crate::descriptor::file_descriptor().clone());
+            deps.push(::protobuf::descriptor::file_descriptor().clone());
             let mut messages = ::std::vec::Vec::with_capacity(4);
             messages.push(Version::generated_message_descriptor_data());
             messages.push(CodeGeneratorRequest::generated_message_descriptor_data());
@@ -1432,13 +1436,13 @@ pub fn file_descriptor() -> &'static crate::reflect::FileDescriptor {
             messages.push(code_generator_response::File::generated_message_descriptor_data());
             let mut enums = ::std::vec::Vec::with_capacity(1);
             enums.push(code_generator_response::Feature::generated_enum_descriptor_data());
-            crate::reflect::GeneratedFileDescriptor::new_generated(
+            ::protobuf::reflect::GeneratedFileDescriptor::new_generated(
                 file_descriptor_proto(),
                 deps,
                 messages,
                 enums,
             )
         });
-        crate::reflect::FileDescriptor::new_generated_2(generated_file_descriptor)
+        ::protobuf::reflect::FileDescriptor::new_generated_2(generated_file_descriptor)
     })
 }

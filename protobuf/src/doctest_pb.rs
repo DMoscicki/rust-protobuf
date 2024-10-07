@@ -20,17 +20,21 @@
 
 //! Generated file from `doctest_pb.proto`
 
+/// Generated files are compatible only with the same version
+/// of protobuf runtime.
+const _PROTOBUF_VERSION_CHECK: () = ::protobuf::VERSION_4_0_0_ALPHA_0;
+
 // @@protoc_insertion_point(message:MyMessage)
 #[derive(PartialEq,Clone,Default,Debug)]
 pub struct MyMessage {
     // special fields
     // @@protoc_insertion_point(special_field:MyMessage.special_fields)
-    pub special_fields: crate::SpecialFields,
+    pub special_fields: ::protobuf::SpecialFields,
 }
 
 impl<'a> ::std::default::Default for &'a MyMessage {
     fn default() -> &'a MyMessage {
-        <MyMessage as crate::Message>::default_instance()
+        <MyMessage as ::protobuf::Message>::default_instance()
     }
 }
 
@@ -39,10 +43,10 @@ impl MyMessage {
         ::std::default::Default::default()
     }
 
-    fn generated_message_descriptor_data() -> crate::reflect::GeneratedMessageDescriptorData {
+    fn generated_message_descriptor_data() -> ::protobuf::reflect::GeneratedMessageDescriptorData {
         let mut fields = ::std::vec::Vec::with_capacity(0);
         let mut oneofs = ::std::vec::Vec::with_capacity(0);
-        crate::reflect::GeneratedMessageDescriptorData::new_2::<MyMessage>(
+        ::protobuf::reflect::GeneratedMessageDescriptorData::new_2::<MyMessage>(
             "MyMessage",
             fields,
             oneofs,
@@ -50,18 +54,18 @@ impl MyMessage {
     }
 }
 
-impl crate::Message for MyMessage {
+impl ::protobuf::Message for MyMessage {
     const NAME: &'static str = "MyMessage";
 
     fn is_initialized(&self) -> bool {
         true
     }
 
-    fn merge_from(&mut self, is: &mut crate::CodedInputStream<'_>) -> crate::Result<()> {
+    fn merge_from(&mut self, is: &mut ::protobuf::CodedInputStream<'_>) -> ::protobuf::Result<()> {
         while let Some(tag) = is.read_raw_tag_or_eof()? {
             match tag {
                 tag => {
-                    crate::rt::read_unknown_or_skip_group(tag, is, self.special_fields.mut_unknown_fields())?;
+                    ::protobuf::rt::read_unknown_or_skip_group(tag, is, self.special_fields.mut_unknown_fields())?;
                 },
             };
         }
@@ -72,21 +76,21 @@ impl crate::Message for MyMessage {
     #[allow(unused_variables)]
     fn compute_size(&self) -> u64 {
         let mut my_size = 0;
-        my_size += crate::rt::unknown_fields_size(self.special_fields.unknown_fields());
+        my_size += ::protobuf::rt::unknown_fields_size(self.special_fields.unknown_fields());
         self.special_fields.cached_size().set(my_size as u32);
         my_size
     }
 
-    fn write_to_with_cached_sizes(&self, os: &mut crate::CodedOutputStream<'_>) -> crate::Result<()> {
+    fn write_to_with_cached_sizes(&self, os: &mut ::protobuf::CodedOutputStream<'_>) -> ::protobuf::Result<()> {
         os.write_unknown_fields(self.special_fields.unknown_fields())?;
         ::std::result::Result::Ok(())
     }
 
-    fn special_fields(&self) -> &crate::SpecialFields {
+    fn special_fields(&self) -> &::protobuf::SpecialFields {
         &self.special_fields
     }
 
-    fn mut_special_fields(&mut self) -> &mut crate::SpecialFields {
+    fn mut_special_fields(&mut self) -> &mut ::protobuf::SpecialFields {
         &mut self.special_fields
     }
 
@@ -100,27 +104,27 @@ impl crate::Message for MyMessage {
 
     fn default_instance() -> &'static MyMessage {
         static instance: MyMessage = MyMessage {
-            special_fields: crate::SpecialFields::new(),
+            special_fields: ::protobuf::SpecialFields::new(),
         };
         &instance
     }
 }
 
-impl crate::MessageFull for MyMessage {
-    fn descriptor() -> crate::reflect::MessageDescriptor {
-        static descriptor: crate::rt::Lazy<crate::reflect::MessageDescriptor> = crate::rt::Lazy::new();
+impl ::protobuf::MessageFull for MyMessage {
+    fn descriptor() -> ::protobuf::reflect::MessageDescriptor {
+        static descriptor: ::protobuf::rt::Lazy<::protobuf::reflect::MessageDescriptor> = ::protobuf::rt::Lazy::new();
         descriptor.get(|| file_descriptor().message_by_package_relative_name("MyMessage").unwrap()).clone()
     }
 }
 
 impl ::std::fmt::Display for MyMessage {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
-        crate::text_format::fmt(self, f)
+        ::protobuf::text_format::fmt(self, f)
     }
 }
 
-impl crate::reflect::ProtobufValue for MyMessage {
-    type RuntimeType = crate::reflect::rt::RuntimeTypeMessage<Self>;
+impl ::protobuf::reflect::ProtobufValue for MyMessage {
+    type RuntimeType = ::protobuf::reflect::rt::RuntimeTypeMessage<Self>;
 }
 
 static file_descriptor_proto_data: &'static [u8] = b"\
@@ -131,30 +135,30 @@ static file_descriptor_proto_data: &'static [u8] = b"\
 ";
 
 /// `FileDescriptorProto` object which was a source for this generated file
-fn file_descriptor_proto() -> &'static crate::descriptor::FileDescriptorProto {
-    static file_descriptor_proto_lazy: crate::rt::Lazy<crate::descriptor::FileDescriptorProto> = crate::rt::Lazy::new();
+fn file_descriptor_proto() -> &'static ::protobuf::descriptor::FileDescriptorProto {
+    static file_descriptor_proto_lazy: ::protobuf::rt::Lazy<::protobuf::descriptor::FileDescriptorProto> = ::protobuf::rt::Lazy::new();
     file_descriptor_proto_lazy.get(|| {
-        crate::Message::parse_from_bytes(file_descriptor_proto_data).unwrap()
+        ::protobuf::Message::parse_from_bytes(file_descriptor_proto_data).unwrap()
     })
 }
 
 /// `FileDescriptor` object which allows dynamic access to files
-pub fn file_descriptor() -> &'static crate::reflect::FileDescriptor {
-    static generated_file_descriptor_lazy: crate::rt::Lazy<crate::reflect::GeneratedFileDescriptor> = crate::rt::Lazy::new();
-    static file_descriptor: crate::rt::Lazy<crate::reflect::FileDescriptor> = crate::rt::Lazy::new();
+pub fn file_descriptor() -> &'static ::protobuf::reflect::FileDescriptor {
+    static generated_file_descriptor_lazy: ::protobuf::rt::Lazy<::protobuf::reflect::GeneratedFileDescriptor> = ::protobuf::rt::Lazy::new();
+    static file_descriptor: ::protobuf::rt::Lazy<::protobuf::reflect::FileDescriptor> = ::protobuf::rt::Lazy::new();
     file_descriptor.get(|| {
         let generated_file_descriptor = generated_file_descriptor_lazy.get(|| {
             let mut deps = ::std::vec::Vec::with_capacity(0);
             let mut messages = ::std::vec::Vec::with_capacity(1);
             messages.push(MyMessage::generated_message_descriptor_data());
             let mut enums = ::std::vec::Vec::with_capacity(0);
-            crate::reflect::GeneratedFileDescriptor::new_generated(
+            ::protobuf::reflect::GeneratedFileDescriptor::new_generated(
                 file_descriptor_proto(),
                 deps,
                 messages,
                 enums,
             )
         });
-        crate::reflect::FileDescriptor::new_generated_2(generated_file_descriptor)
+        ::protobuf::reflect::FileDescriptor::new_generated_2(generated_file_descriptor)
     })
 }

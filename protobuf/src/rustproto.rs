@@ -20,46 +20,50 @@
 
 //! Generated file from `rustproto.proto`
 
+/// Generated files are compatible only with the same version
+/// of protobuf runtime.
+const _PROTOBUF_VERSION_CHECK: () = ::protobuf::VERSION_4_0_0_ALPHA_0;
+
 /// Extension fields
 pub mod exts {
 
-    pub const generate_accessors_all: crate::ext::ExtFieldOptional<crate::descriptor::FileOptions, bool> = crate::ext::ExtFieldOptional::new(17004, crate::descriptor::field_descriptor_proto::Type::TYPE_BOOL);
+    pub const generate_accessors_all: ::protobuf::ext::ExtFieldOptional<::protobuf::descriptor::FileOptions, bool> = ::protobuf::ext::ExtFieldOptional::new(17004, ::protobuf::descriptor::field_descriptor_proto::Type::TYPE_BOOL);
 
-    pub const generate_getter_all: crate::ext::ExtFieldOptional<crate::descriptor::FileOptions, bool> = crate::ext::ExtFieldOptional::new(17005, crate::descriptor::field_descriptor_proto::Type::TYPE_BOOL);
+    pub const generate_getter_all: ::protobuf::ext::ExtFieldOptional<::protobuf::descriptor::FileOptions, bool> = ::protobuf::ext::ExtFieldOptional::new(17005, ::protobuf::descriptor::field_descriptor_proto::Type::TYPE_BOOL);
 
-    pub const tokio_bytes_all: crate::ext::ExtFieldOptional<crate::descriptor::FileOptions, bool> = crate::ext::ExtFieldOptional::new(17011, crate::descriptor::field_descriptor_proto::Type::TYPE_BOOL);
+    pub const tokio_bytes_all: ::protobuf::ext::ExtFieldOptional<::protobuf::descriptor::FileOptions, bool> = ::protobuf::ext::ExtFieldOptional::new(17011, ::protobuf::descriptor::field_descriptor_proto::Type::TYPE_BOOL);
 
-    pub const tokio_bytes_for_string_all: crate::ext::ExtFieldOptional<crate::descriptor::FileOptions, bool> = crate::ext::ExtFieldOptional::new(17012, crate::descriptor::field_descriptor_proto::Type::TYPE_BOOL);
+    pub const tokio_bytes_for_string_all: ::protobuf::ext::ExtFieldOptional<::protobuf::descriptor::FileOptions, bool> = ::protobuf::ext::ExtFieldOptional::new(17012, ::protobuf::descriptor::field_descriptor_proto::Type::TYPE_BOOL);
 
-    pub const oneofs_non_exhaustive_all: crate::ext::ExtFieldOptional<crate::descriptor::FileOptions, bool> = crate::ext::ExtFieldOptional::new(17013, crate::descriptor::field_descriptor_proto::Type::TYPE_BOOL);
+    pub const oneofs_non_exhaustive_all: ::protobuf::ext::ExtFieldOptional<::protobuf::descriptor::FileOptions, bool> = ::protobuf::ext::ExtFieldOptional::new(17013, ::protobuf::descriptor::field_descriptor_proto::Type::TYPE_BOOL);
 
-    pub const btreemap_all: crate::ext::ExtFieldOptional<crate::descriptor::FileOptions, bool> = crate::ext::ExtFieldOptional::new(17014, crate::descriptor::field_descriptor_proto::Type::TYPE_BOOL);
+    pub const btreemap_all: ::protobuf::ext::ExtFieldOptional<::protobuf::descriptor::FileOptions, bool> = ::protobuf::ext::ExtFieldOptional::new(17014, ::protobuf::descriptor::field_descriptor_proto::Type::TYPE_BOOL);
 
-    pub const lite_runtime_all: crate::ext::ExtFieldOptional<crate::descriptor::FileOptions, bool> = crate::ext::ExtFieldOptional::new(17035, crate::descriptor::field_descriptor_proto::Type::TYPE_BOOL);
+    pub const lite_runtime_all: ::protobuf::ext::ExtFieldOptional<::protobuf::descriptor::FileOptions, bool> = ::protobuf::ext::ExtFieldOptional::new(17035, ::protobuf::descriptor::field_descriptor_proto::Type::TYPE_BOOL);
 
-    pub const generate_accessors: crate::ext::ExtFieldOptional<crate::descriptor::MessageOptions, bool> = crate::ext::ExtFieldOptional::new(17004, crate::descriptor::field_descriptor_proto::Type::TYPE_BOOL);
+    pub const generate_accessors: ::protobuf::ext::ExtFieldOptional<::protobuf::descriptor::MessageOptions, bool> = ::protobuf::ext::ExtFieldOptional::new(17004, ::protobuf::descriptor::field_descriptor_proto::Type::TYPE_BOOL);
 
-    pub const generate_getter: crate::ext::ExtFieldOptional<crate::descriptor::MessageOptions, bool> = crate::ext::ExtFieldOptional::new(17005, crate::descriptor::field_descriptor_proto::Type::TYPE_BOOL);
+    pub const generate_getter: ::protobuf::ext::ExtFieldOptional<::protobuf::descriptor::MessageOptions, bool> = ::protobuf::ext::ExtFieldOptional::new(17005, ::protobuf::descriptor::field_descriptor_proto::Type::TYPE_BOOL);
 
-    pub const tokio_bytes: crate::ext::ExtFieldOptional<crate::descriptor::MessageOptions, bool> = crate::ext::ExtFieldOptional::new(17011, crate::descriptor::field_descriptor_proto::Type::TYPE_BOOL);
+    pub const tokio_bytes: ::protobuf::ext::ExtFieldOptional<::protobuf::descriptor::MessageOptions, bool> = ::protobuf::ext::ExtFieldOptional::new(17011, ::protobuf::descriptor::field_descriptor_proto::Type::TYPE_BOOL);
 
-    pub const tokio_bytes_for_string: crate::ext::ExtFieldOptional<crate::descriptor::MessageOptions, bool> = crate::ext::ExtFieldOptional::new(17012, crate::descriptor::field_descriptor_proto::Type::TYPE_BOOL);
+    pub const tokio_bytes_for_string: ::protobuf::ext::ExtFieldOptional<::protobuf::descriptor::MessageOptions, bool> = ::protobuf::ext::ExtFieldOptional::new(17012, ::protobuf::descriptor::field_descriptor_proto::Type::TYPE_BOOL);
 
-    pub const oneofs_non_exhaustive: crate::ext::ExtFieldOptional<crate::descriptor::MessageOptions, bool> = crate::ext::ExtFieldOptional::new(17013, crate::descriptor::field_descriptor_proto::Type::TYPE_BOOL);
+    pub const oneofs_non_exhaustive: ::protobuf::ext::ExtFieldOptional<::protobuf::descriptor::MessageOptions, bool> = ::protobuf::ext::ExtFieldOptional::new(17013, ::protobuf::descriptor::field_descriptor_proto::Type::TYPE_BOOL);
 
-    pub const btreemap: crate::ext::ExtFieldOptional<crate::descriptor::MessageOptions, bool> = crate::ext::ExtFieldOptional::new(17014, crate::descriptor::field_descriptor_proto::Type::TYPE_BOOL);
+    pub const btreemap: ::protobuf::ext::ExtFieldOptional<::protobuf::descriptor::MessageOptions, bool> = ::protobuf::ext::ExtFieldOptional::new(17014, ::protobuf::descriptor::field_descriptor_proto::Type::TYPE_BOOL);
 
-    pub const generate_accessors_field: crate::ext::ExtFieldOptional<crate::descriptor::FieldOptions, bool> = crate::ext::ExtFieldOptional::new(17004, crate::descriptor::field_descriptor_proto::Type::TYPE_BOOL);
+    pub const generate_accessors_field: ::protobuf::ext::ExtFieldOptional<::protobuf::descriptor::FieldOptions, bool> = ::protobuf::ext::ExtFieldOptional::new(17004, ::protobuf::descriptor::field_descriptor_proto::Type::TYPE_BOOL);
 
-    pub const generate_getter_field: crate::ext::ExtFieldOptional<crate::descriptor::FieldOptions, bool> = crate::ext::ExtFieldOptional::new(17005, crate::descriptor::field_descriptor_proto::Type::TYPE_BOOL);
+    pub const generate_getter_field: ::protobuf::ext::ExtFieldOptional<::protobuf::descriptor::FieldOptions, bool> = ::protobuf::ext::ExtFieldOptional::new(17005, ::protobuf::descriptor::field_descriptor_proto::Type::TYPE_BOOL);
 
-    pub const tokio_bytes_field: crate::ext::ExtFieldOptional<crate::descriptor::FieldOptions, bool> = crate::ext::ExtFieldOptional::new(17011, crate::descriptor::field_descriptor_proto::Type::TYPE_BOOL);
+    pub const tokio_bytes_field: ::protobuf::ext::ExtFieldOptional<::protobuf::descriptor::FieldOptions, bool> = ::protobuf::ext::ExtFieldOptional::new(17011, ::protobuf::descriptor::field_descriptor_proto::Type::TYPE_BOOL);
 
-    pub const tokio_bytes_for_string_field: crate::ext::ExtFieldOptional<crate::descriptor::FieldOptions, bool> = crate::ext::ExtFieldOptional::new(17012, crate::descriptor::field_descriptor_proto::Type::TYPE_BOOL);
+    pub const tokio_bytes_for_string_field: ::protobuf::ext::ExtFieldOptional<::protobuf::descriptor::FieldOptions, bool> = ::protobuf::ext::ExtFieldOptional::new(17012, ::protobuf::descriptor::field_descriptor_proto::Type::TYPE_BOOL);
 
-    pub const oneofs_non_exhaustive_field: crate::ext::ExtFieldOptional<crate::descriptor::FieldOptions, bool> = crate::ext::ExtFieldOptional::new(17013, crate::descriptor::field_descriptor_proto::Type::TYPE_BOOL);
+    pub const oneofs_non_exhaustive_field: ::protobuf::ext::ExtFieldOptional<::protobuf::descriptor::FieldOptions, bool> = ::protobuf::ext::ExtFieldOptional::new(17013, ::protobuf::descriptor::field_descriptor_proto::Type::TYPE_BOOL);
 
-    pub const btreemap_field: crate::ext::ExtFieldOptional<crate::descriptor::FieldOptions, bool> = crate::ext::ExtFieldOptional::new(17014, crate::descriptor::field_descriptor_proto::Type::TYPE_BOOL);
+    pub const btreemap_field: ::protobuf::ext::ExtFieldOptional<::protobuf::descriptor::FieldOptions, bool> = ::protobuf::ext::ExtFieldOptional::new(17014, ::protobuf::descriptor::field_descriptor_proto::Type::TYPE_BOOL);
 }
 
 static file_descriptor_proto_data: &'static [u8] = b"\
@@ -189,30 +193,30 @@ static file_descriptor_proto_data: &'static [u8] = b"\
 ";
 
 /// `FileDescriptorProto` object which was a source for this generated file
-fn file_descriptor_proto() -> &'static crate::descriptor::FileDescriptorProto {
-    static file_descriptor_proto_lazy: crate::rt::Lazy<crate::descriptor::FileDescriptorProto> = crate::rt::Lazy::new();
+fn file_descriptor_proto() -> &'static ::protobuf::descriptor::FileDescriptorProto {
+    static file_descriptor_proto_lazy: ::protobuf::rt::Lazy<::protobuf::descriptor::FileDescriptorProto> = ::protobuf::rt::Lazy::new();
     file_descriptor_proto_lazy.get(|| {
-        crate::Message::parse_from_bytes(file_descriptor_proto_data).unwrap()
+        ::protobuf::Message::parse_from_bytes(file_descriptor_proto_data).unwrap()
     })
 }
 
 /// `FileDescriptor` object which allows dynamic access to files
-pub fn file_descriptor() -> &'static crate::reflect::FileDescriptor {
-    static generated_file_descriptor_lazy: crate::rt::Lazy<crate::reflect::GeneratedFileDescriptor> = crate::rt::Lazy::new();
-    static file_descriptor: crate::rt::Lazy<crate::reflect::FileDescriptor> = crate::rt::Lazy::new();
+pub fn file_descriptor() -> &'static ::protobuf::reflect::FileDescriptor {
+    static generated_file_descriptor_lazy: ::protobuf::rt::Lazy<::protobuf::reflect::GeneratedFileDescriptor> = ::protobuf::rt::Lazy::new();
+    static file_descriptor: ::protobuf::rt::Lazy<::protobuf::reflect::FileDescriptor> = ::protobuf::rt::Lazy::new();
     file_descriptor.get(|| {
         let generated_file_descriptor = generated_file_descriptor_lazy.get(|| {
             let mut deps = ::std::vec::Vec::with_capacity(1);
-            deps.push(crate::descriptor::file_descriptor().clone());
+            deps.push(::protobuf::descriptor::file_descriptor().clone());
             let mut messages = ::std::vec::Vec::with_capacity(0);
             let mut enums = ::std::vec::Vec::with_capacity(0);
-            crate::reflect::GeneratedFileDescriptor::new_generated(
+            ::protobuf::reflect::GeneratedFileDescriptor::new_generated(
                 file_descriptor_proto(),
                 deps,
                 messages,
                 enums,
             )
         });
-        crate::reflect::FileDescriptor::new_generated_2(generated_file_descriptor)
+        ::protobuf::reflect::FileDescriptor::new_generated_2(generated_file_descriptor)
     })
 }
